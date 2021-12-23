@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/drawable/arrow_back.xml" value="0.209375" />
         <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/drawable/bi_camera_f.xml" value="0.290625" />
         <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/drawable/frame_1.xml" value="0.290625" />
         <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/drawable/frame_2.xml" value="0.290625" />
@@ -10,7 +11,9 @@
         <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/drawable/google_pixel.xml" value="0.290625" />
         <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/drawable/rectangle_1.xml" value="0.290625" />
         <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/drawable/rectangle_2.xml" value="0.290625" />
+        <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/drawable/rectangle_3.xml" value="0.290625" />
         <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/layout/activity_word.xml" value="0.24365942028985507" />
         <entry key="..\:/ITS/Teknologi Informasi/Platform dan Pengembangan Aplikasi Mobile/FPMobile/app/src/main/res/xml/file_path.xml" value="0.14375" />
       </map>
     </option>

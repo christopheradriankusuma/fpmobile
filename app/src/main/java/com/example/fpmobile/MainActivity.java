@@ -146,7 +146,11 @@ public class MainActivity extends AppCompatActivity {
                                 try {
                                     String s = response.body().string();
                                     JSONObject jsonObject = new JSONObject(s);
-                                    Toast.makeText(getApplicationContext(),jsonObject.getString("prediction"),Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(MainActivity.this, WordActivity.class);
+                                    intent.putExtra("title", "ASL Translator");
+                                    intent.putExtra("letter", jsonObject.getString("prediction"));
+                                    startActivity(intent);
+//                                    Toast.makeText(getApplicationContext(),jsonObject.getString("prediction"),Toast.LENGTH_LONG).show();
                                 }catch (Exception e){
 
                                 }
