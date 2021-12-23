@@ -74,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
         translateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String text = textToTranslate.getText().toString();
+                Intent intent = new Intent(MainActivity.this, SentenceActivity.class);
+                startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Translate", Toast.LENGTH_SHORT).show();
             }
         });
