@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 askCameraPermissions();
 
-
             }
         });
 
@@ -85,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Dictionary", Toast.LENGTH_SHORT).show();
+
             }
         });
 
