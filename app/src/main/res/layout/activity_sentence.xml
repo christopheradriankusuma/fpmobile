@@ -59,6 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <ListView
+        android:id="@+id/vertical_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -68,7 +69,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/rectangle_2"
-        app:layout_constraintVertical_bias="0.124">
+        app:layout_constraintVertical_bias="1.0">
 
         <!--        <HorizontalScrollView-->
         <!--            android:layout_width="wrap_content"-->
