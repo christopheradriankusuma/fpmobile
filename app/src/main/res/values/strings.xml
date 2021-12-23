@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FPMobile</string>
+    <string name="asl_transla">ASL Translator</string>
+    <string name="translate">Translate</string>
+</resources>
