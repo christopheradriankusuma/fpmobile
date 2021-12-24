@@ -9,9 +9,12 @@ import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -54,11 +57,24 @@ public class MainActivity extends AppCompatActivity {
     Bitmap img;
     String encodedfile;
     File f;
+    SQLiteOpenHelper helper;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        helper = new SQLiteOpenHelper(this, "db.sqlite3", null, 1) {
+            @Override
+            public void onCreate(SQLiteDatabase sqLiteDatabase) { }
+
+            @Override
+            public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) { }
+        };
+
+        db = helper.getWritableDatabase();
+        db.execSQL("CREATE TABLE IF NOT EXISTS history (sentence TEXT)");
 
         EditText textToTranslate = findViewById(R.id.textToTranslate);
 
@@ -78,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = textToTranslate.getText().toString();
+
+                ContentValues data = new ContentValues();
+                data.put("sentence", text);
+                db.insert("history", null, data);
+
                 Intent intent = new Intent(MainActivity.this, SentenceActivity.class);
                 intent.putExtra("text", text);
                 startActivity(intent);
@@ -95,7 +116,8 @@ public class MainActivity extends AppCompatActivity {
         historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "History", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+                startActivity(intent);
             }
         });
     }
