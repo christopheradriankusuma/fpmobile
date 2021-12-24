@@ -20,10 +20,10 @@ public class SentenceActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.vertical_list);
 
-        ArrayList<ArrayList<Item>> arrayList = new ArrayList<>();
-
-        ArrayList<Item> row1 = new ArrayList<Item>();
-
+        ArrayList<Item> arrayList = new ArrayList<>();
+        for (int i = 65; i < 65 + 26; i++) {
+            arrayList.add(new Item((char)i+""));
+        }
         ItemAdapter itemAdapter = new ItemAdapter(getApplicationContext(), arrayList);
         listView.setAdapter(itemAdapter);
 

@@ -107,22 +107,21 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //    }
 
-      private void askCameraPermissions() {
-          int PERMISSION_ALL = 1;
-          String[] PERMISSIONS = {
-                  android.Manifest.permission.READ_EXTERNAL_STORAGE,
-                  android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                  android.Manifest.permission.MANAGE_EXTERNAL_STORAGE,
-                  android.Manifest.permission.CAMERA
-          };
+    private void askCameraPermissions() {
+        int PERMISSION_ALL = 1;
+        String[] PERMISSIONS = {
+            android.Manifest.permission.READ_EXTERNAL_STORAGE,
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            android.Manifest.permission.MANAGE_EXTERNAL_STORAGE,
+            android.Manifest.permission.CAMERA
+        };
 
-          if (!hasPermissions(this, PERMISSIONS)) {
-              ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
-          }
-          else{
+        if (!hasPermissions(this, PERMISSIONS)) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+        }
+        else{
             dispatchTakePictureIntent();
         }
-
     }
 
 
@@ -140,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == CAMERA_PERM_CODE) {
+        if (requestCode == 1) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 dispatchTakePictureIntent();
             } else {
@@ -284,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
             // Continue only if the File was successfully created
             if (photoFile != null) {
                 Uri photoURI = FileProvider.getUriForFile(this,
-                        "com.example.android.fileprovider",
+                        BuildConfig.APPLICATION_ID + ".provider",
                         photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE);
