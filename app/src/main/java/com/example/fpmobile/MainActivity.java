@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
         dictionaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ListActivity.class);
+                startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Dictionary", Toast.LENGTH_SHORT).show();
 
             }

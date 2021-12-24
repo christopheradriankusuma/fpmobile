@@ -24,22 +24,29 @@ public class WordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word);
 
+        TextView titleView = findViewById(R.id.title);
+        TextView letterView = findViewById(R.id.letter);
+        ImageView imageView = findViewById(R.id.asl_picture);
+
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         String letter = intent.getStringExtra("letter");
-        File f = (File)intent.getSerializableExtra("image");
 
-        TextView titleView = findViewById(R.id.title);
         titleView.setText(title);
-
-        TextView letterView = findViewById(R.id.letter);
         letterView.setText(letter);
-
-        ImageView imageView = findViewById(R.id.asl_picture);
-        try {
-            imageView.setImageBitmap(getBitmapFromUri(Uri.fromFile(f)));
-        } catch (IOException e) {
-            e.printStackTrace();
+        Object param = intent.getExtras().get("image");
+        if (param instanceof File) {
+            File f = (File)param;
+            try {
+                imageView.setImageBitmap(getBitmapFromUri(Uri.fromFile(f)));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+            System.out.println("File");
+        } else {
+            int id = (int)param;
+            imageView.setImageResource(id);
+            System.out.println("int");
         }
 
         Button backButton = findViewById(R.id.arrowBack);
