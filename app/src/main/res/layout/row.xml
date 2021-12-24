@@ -6,6 +6,7 @@
 
         <TextView
             android:id="@+id/textView"
+            android:fontFamily="@font/inter_semibold"
             android:textColor="@color/black"
             android:layout_width="64dp"
             android:layout_height="wrap_content"
