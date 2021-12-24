@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 askCameraPermissions();
-
             }
         });
 
@@ -78,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String text = textToTranslate.getText().toString();
                 Intent intent = new Intent(MainActivity.this, SentenceActivity.class);
+                intent.putExtra("text", text);
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Translate", Toast.LENGTH_SHORT).show();
             }
@@ -184,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
                                     Intent intent = new Intent(MainActivity.this, WordActivity.class);
                                     intent.putExtra("title", "ASL Translator");
                                     intent.putExtra("letter", jsonObject.getString("prediction"));
+                                    intent.putExtra("image", f);
                                     startActivity(intent);
 //                                    Toast.makeText(getApplicationContext(),jsonObject.getString("prediction"),Toast.LENGTH_LONG).show();
                                 }catch (Exception e){

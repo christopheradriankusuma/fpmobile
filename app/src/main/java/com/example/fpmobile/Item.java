@@ -1,17 +1,19 @@
 package com.example.fpmobile;
 
 public class Item {
-    private String letter;
+    private final String letter;
+    private final int id;
 
-    public Item(String letter) {
+    public Item(String letter, int id) {
         this.letter = letter;
+        this.id = id;
     }
 
     public String getLetter() {
         return letter;
     }
 
-    public String getImageName() {
-        return letter + ".png";
+    public int getId() {
+        return id;
     }
 }

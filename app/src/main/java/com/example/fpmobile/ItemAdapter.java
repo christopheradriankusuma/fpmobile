@@ -6,13 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.List;
+import java.util.Locale;
 
 public class ItemAdapter extends ArrayAdapter<Item> {
     public ItemAdapter(Context context, List<Item> itemList) {
@@ -30,10 +30,8 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         ImageView image = convertView.findViewById(R.id.image);
         TextView textView = convertView.findViewById(R.id.textView);
 
-        String letter = item.getLetter();
-        String imageName = item.getImageName();
-
-        textView.setText(letter);
+        textView.setText(item.getLetter().toUpperCase(Locale.ROOT));
+        image.setImageResource(item.getId());
 
         return convertView;
     }
