@@ -107,22 +107,21 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //    }
 
-      private void askCameraPermissions() {
-          int PERMISSION_ALL = 1;
-          String[] PERMISSIONS = {
-                  android.Manifest.permission.READ_EXTERNAL_STORAGE,
-                  android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                  android.Manifest.permission.MANAGE_EXTERNAL_STORAGE,
-                  android.Manifest.permission.CAMERA
-          };
+    private void askCameraPermissions() {
+        int PERMISSION_ALL = 1;
+        String[] PERMISSIONS = {
+            android.Manifest.permission.READ_EXTERNAL_STORAGE,
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            android.Manifest.permission.MANAGE_EXTERNAL_STORAGE,
+            android.Manifest.permission.CAMERA
+        };
 
-          if (!hasPermissions(this, PERMISSIONS)) {
-              ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
-          }
-          else{
+        if (!hasPermissions(this, PERMISSIONS)) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+        }
+        else{
             dispatchTakePictureIntent();
         }
-
     }
 
 

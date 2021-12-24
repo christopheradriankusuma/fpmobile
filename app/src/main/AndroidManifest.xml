@@ -26,6 +26,9 @@
             android:name=".WordActivity"
             android:exported="true" />
         <activity
+            android:name=".SentenceActivity"
+            android:exported="true" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>

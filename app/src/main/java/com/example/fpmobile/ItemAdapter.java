@@ -27,7 +27,6 @@ public class ItemAdapter extends ArrayAdapter<Item> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.row, parent, false);
         }
 
-        LinearLayout layout = convertView.findViewById(R.id.row);
         ImageView image = convertView.findViewById(R.id.image);
         TextView textView = convertView.findViewById(R.id.textView);
 
@@ -35,8 +34,6 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         String imageName = item.getImageName();
 
         textView.setText(letter);
-
-        layout.addView(convertView);
 
         return convertView;
     }
