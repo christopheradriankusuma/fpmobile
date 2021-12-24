@@ -9,6 +9,7 @@ import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 askCameraPermissions();
+
             }
         });
 
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Dictionary", Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -96,12 +99,42 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void askCameraPermissions() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA},CAMERA_PERM_CODE );
-        }else{
+//      private void askCameraPermissions() {
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+//            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA},CAMERA_PERM_CODE );
+//        }else{
+//            dispatchTakePictureIntent();
+//        }
+//    }
+
+      private void askCameraPermissions() {
+          int PERMISSION_ALL = 1;
+          String[] PERMISSIONS = {
+                  android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                  android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                  android.Manifest.permission.MANAGE_EXTERNAL_STORAGE,
+                  android.Manifest.permission.CAMERA
+          };
+
+          if (!hasPermissions(this, PERMISSIONS)) {
+              ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+          }
+          else{
             dispatchTakePictureIntent();
         }
+
+    }
+
+
+    public static boolean hasPermissions(Context context, String... permissions) {
+        if (context != null && permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     @Override
