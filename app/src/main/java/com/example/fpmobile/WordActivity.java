@@ -42,11 +42,9 @@ public class WordActivity extends AppCompatActivity {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            System.out.println("File");
         } else {
             int id = (int)param;
             imageView.setImageResource(id);
-            System.out.println("int");
         }
 
         Button backButton = findViewById(R.id.arrowBack);

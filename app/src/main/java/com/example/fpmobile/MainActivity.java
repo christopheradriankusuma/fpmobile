@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, SentenceActivity.class);
                 intent.putExtra("text", text);
                 startActivity(intent);
-                Toast.makeText(getApplicationContext(), "Translate", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -88,8 +87,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ListActivity.class);
                 startActivity(intent);
-                Toast.makeText(getApplicationContext(), "Dictionary", Toast.LENGTH_SHORT).show();
-
             }
         });
 
@@ -148,11 +145,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Camera Permission is Required to Use camera", Toast.LENGTH_SHORT).show();
             }
         }
-        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(getApplicationContext(), "Permission granted", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "Permission denied", Toast.LENGTH_SHORT).show();
-        }
+//        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//            Toast.makeText(getApplicationContext(), "Permission granted", Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(getApplicationContext(), "Permission denied", Toast.LENGTH_SHORT).show();
+//        }
     }
 
     @Override

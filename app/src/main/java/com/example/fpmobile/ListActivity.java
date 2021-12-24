@@ -42,7 +42,6 @@ public class ListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                System.out.println("Clicking " + position);
                 int resId = getResources().getIdentifier(arrayList.get(position).toLowerCase(Locale.ROOT), "drawable", getPackageName());
                 Intent intent = new Intent(ListActivity.this, WordActivity.class);
                 intent.putExtra("title", "Dictionary");
