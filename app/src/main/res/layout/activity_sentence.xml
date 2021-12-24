@@ -27,6 +27,7 @@
 
     <TextView
         android:id="@+id/title"
+        android:fontFamily="@font/inter_bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
