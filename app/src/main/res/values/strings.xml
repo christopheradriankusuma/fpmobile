@@ -2,5 +2,6 @@
     <string name="app_name">ASL Translator</string>
     <string name="asl_transla">ASL Translator</string>
     <string name="translate">Translate</string>
-    <string name="Dictionary">Dictionary</string>
+    <string name="dictionary">Dictionary</string>
+    <string name="history">History</string>
 </resources>

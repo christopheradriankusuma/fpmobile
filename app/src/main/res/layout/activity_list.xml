@@ -32,7 +32,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal|top"
-        android:text="@string/Dictionary"
+        android:text="@string/dictionary"
         android:textAppearance="@style/asl_transla"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
